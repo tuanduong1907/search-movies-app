@@ -61,10 +61,10 @@ const TheMoviesSearch = () => {
       )}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {!loading &&
-          movies.length > 0 &&
+          movies.length > 0 ?
           movies.map((item) => (
             <MovieItem key={item.id} data={item}></MovieItem>
-          ))}
+          )) : !loading && <span className="fixed top-[20vh] -translate-x-2/4 left-2/4 text-red-500 text-xl font-medium select-none">Not Find Movie</span>}
       </div>
     </div>
   );
